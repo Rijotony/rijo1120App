@@ -6,8 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Rijo';
-  tryMe(){
-    this.name = 'welcome to the class';
+  selectedEmployee;
+  employees:Array<object> = [
+    {
+      name:'Ancy',
+      age:20
+    },
+    {
+      name:'Bindu',
+      age:21
+    }
+  ];
+  selectEmployee(employees){
+    this.selectedEmployee = employees;
   }
+
 }
