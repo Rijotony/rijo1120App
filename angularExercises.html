@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+<app-footer></app-footer>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>View</th>
+    </tr>
+    </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{emp.name}}</td>
+          <td>{{emp.age}}</td>
+          <td><button (click)="selectEmployee(emp)">View Details</button></td>
+        </tr>
+      </tbody>
+  
+</table>
+<div *ngIf="selectedEmployee">
+  <h2>Selected Employee</h2>
+    <p>Name: {{selectedEmployee.name}}</p>
+    <p>Age:{{selectedEmployee.age}}</p>
+  
+</div>
