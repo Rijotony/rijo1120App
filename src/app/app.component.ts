@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Employee } from './models/employee';
+import {viewClassName} from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -6,19 +8,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'Angular5 Training';
+  activeView = 'list';
   selectedEmployee;
-  employees:Array<object> = [
-    {
-      name:'Ancy',
-      age:20
-    },
-    {
-      name:'Bindu',
-      age:21
-    }
+  newEmployee: Employee = new Employee('',null);
+  employees:Array<Employee> = [
+    new Employee('Ajay',23),
+    new Employee('Ancy',20)
   ];
-  selectEmployee(employees){
-    this.selectedEmployee = employees;
+  clearSelections(){
+  this.employees.forEach(emp => emp.selected=false);
+  }
+  addEmployee(){
+    this.employees.push(this.newEmployee);
   }
 
+  onSelectEmployee(employee:Employee){
+    this.clearSelections();
+    employee.selected=true;
+    this.selectedEmployee =employee; 
+
+}
+selectView(viewName){
+  this.activeView = viewName;
+}
+deleteEmployee(empIndex) {
+  this.employees.splice(empIndex, 1);
+}
 }
