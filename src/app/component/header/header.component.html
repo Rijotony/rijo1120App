@@ -1,1 +1,17 @@
-<p>This is the header component</p>
+<!--<p>This is the header component</p> -->
+
+
+    <div>
+        <ul> 
+            <li *ngFor = "let menu of list">
+                    <a href="" (click)= "menuItemClicked($event, menu)">{{menu}}</a>
+            </li>
+        </ul>
+    
+
+        <div *ngFor ="let btn of buttonList; let i =index">
+            <button [ngClass]="{'active': selectedBtnIndex === i }" (click)= "buttonClick(i)">{{btn}}</button>
+    
+            
+</div>
+</div>

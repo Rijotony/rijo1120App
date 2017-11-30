@@ -1,8 +1,3 @@
 tr.selected{
     background-color: blue;
 }
-.active{
-    background-color: green;
-    color:pink;
-    font-weight: bold;
-}

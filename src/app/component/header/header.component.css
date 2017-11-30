@@ -1,0 +1,10 @@
+div{
+    border:1px dotted blue;
+    margin: 10px;
+    background-color: pink
+}
+.active{
+    background-color: green;
+    color:pink;
+    font-weight: bold;
+}

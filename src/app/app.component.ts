@@ -10,8 +10,12 @@ import {viewClassName} from '@angular/compiler';
 export class AppComponent {
   title = 'Angular5 Training';
   activeView = 'list';
+activeViewIndex =0;
   selectedEmployee;
   newEmployee: Employee = new Employee('',null);
+  menuList:Array<string> = ['Home','About','Contact'];
+ buttonList:Array<string> = ['View Employee', 'Add Employee'];
+ 
   employees:Array<Employee> = [
     new Employee('Ajay',23),
     new Employee('Ancy',20)
@@ -29,10 +33,17 @@ export class AppComponent {
     this.selectedEmployee =employee; 
 
 }
-selectView(viewName){
-  this.activeView = viewName;
+//selectView(viewName){
+ //this.activeView = viewName; 
+//}
+selectView(viewIndex){
+  this.activeViewIndex = viewIndex;
 }
+
 deleteEmployee(empIndex) {
   this.employees.splice(empIndex, 1);
+}
+onMenuClick(){
+  alert("menu is clicked");
 }
 }
